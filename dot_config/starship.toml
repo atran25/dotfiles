@@ -9,28 +9,33 @@ $cmd_duration\
 $line_break\
 $character"""
 
-add_newline = false
+add_newline = true
 
 [hostname]
 ssh_symbol = "🌐 "
 ssh_only = false
-format = "[$ssh_symbol$hostname]($style)@"
+format = "[$ssh_symbol$hostname]($style)"
+style = "bright-blue bold"
 
 [localip]
+format = "[@$localipv4]($style)"
 ssh_only = false
 disabled = false
+style = "bright-blue bold"
 
 [directory]
+format = "[ $path]($style)[$read_only]($read_only_style) "
 read_only = "🔒"
 truncate_to_repo = false
+style = "bright-yellow bold"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "bright-black"
+style = "bright-black bold"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bright-black) ($ahead_behind$stashed)]($style)"
-style = "cyan"
+style = "cyan bold"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -41,11 +46,11 @@ stashed = "≡"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+style = "bright-black bold"
 
 [cmd_duration]
 format = "[$duration]($style) "
-style = "yellow"
+style = "yellow bold"
 
 [line_break]
 disabled = true
